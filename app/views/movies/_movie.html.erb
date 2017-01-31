@@ -1,0 +1,12 @@
+<%= cache entry do %>
+   <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag(entry.imdb_image, width: '100%', height: '100%') %>
+        <div class="caption">
+          <p><%= entry.title %></p>
+
+          <p><a href="<%=entry.download_url%>" class="btn btn-primary" role="button">Download</a> </p>
+        </div>
+      </div>
+    </div>
+<% end %>

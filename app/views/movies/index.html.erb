@@ -1,0 +1,13 @@
+<%= form_tag populate_url, method: :post, class: 'form' do %>
+  <%= text_field_tag :filelist_rss, nil,placeholder: 'filelist.url', class: 'form-input' %>
+  <%= submit_tag :submit %>
+<% end %>
+
+<% @entries.in_groups_of(3).each do |group| %>
+    <div class="row">
+      <% group.compact.each do |entry| %>
+          <%= render 'movie', entry: MovieEntry.new(entry)%>
+      <% end %>
+    </div>
+
+<% end %>
