@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   def create
     url = params[:filelist_rss].strip
     @entries = begin
-      Feedjira::Feed.fetch_and_parse(url).entries.first(10).compact
+      Feedjira::Feed.fetch_and_parse(url).entries.first(50).compact
     rescue
       []
     end
